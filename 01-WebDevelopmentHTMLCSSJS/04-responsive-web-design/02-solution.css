@@ -1,0 +1,19 @@
+.desk-item {
+  width: 100%; /* For mobile devices */
+  padding: 10px;
+  margin: 5px;
+  background-color: #f2f2f2;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+@media screen and (max-width: 400px) {
+/* Solution: */
+/* @media screen and (min-width: 400px) { */
+  .desk-item {
+    width: 30%; /* For desktops or larger screens */
+    float: left; /* Place items side by side */
+    /* Solution: */
+    /* box-sizing: border-box; */
+  }
+}

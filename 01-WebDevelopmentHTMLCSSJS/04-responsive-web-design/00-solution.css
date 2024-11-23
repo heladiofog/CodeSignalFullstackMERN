@@ -1,0 +1,17 @@
+/* Style for mobile devices first */
+.desk, .computer, .plant {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Add media queries for larger screens */
+@media screen and (min-width: 400px) {
+  .desk, .computer, .plant {
+      width: 30%;
+      float: left;
+      margin-right: 3.333%;
+  }
+  .plant {
+      margin-right: 0; /* Last item doesn't have a right margin */
+  }
+}

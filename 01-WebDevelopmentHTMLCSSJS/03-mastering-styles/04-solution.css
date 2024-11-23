@@ -1,0 +1,27 @@
+/* TODO: Set the position for your blog post preview and initiate an animation with suitable properties */
+/* TODO: Define your @keyframes for the glowing effect your post preview should have */
+/* Solution from w3schhool */
+/* TODO: Set the position for your blog post preview and initiate an animation with suitable properties */
+body {
+  background-color: black;
+  font-family: cursive;
+}
+
+.post-preview {
+  position: relative;
+  font-size: 40px;
+  color: #fff;
+  /* color: #c10d82; */
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+/* TODO: Define your @keyframes for the glowing effect your post preview should have */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}

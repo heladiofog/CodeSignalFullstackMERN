@@ -1,0 +1,29 @@
+/* Applying animations and transitions to blog elements */
+.animated-title {
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { color: #30a2bc; }
+  100% { color: #2b8ca3; }
+  /* Solution */
+  /* 
+  0% { color: #30a2bc; font-size: 20px; }
+  100% { color: #2b8ca3; font-size: 30px; }
+  */
+}
+
+.top-button {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: #ff5733;
+  color: white;
+  border: none;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.top-button:hover {
+  background-color: #c4421a;
+}

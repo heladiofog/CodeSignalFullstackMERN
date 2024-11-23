@@ -1,0 +1,9 @@
+#mainTitle {
+  color: blue;
+  text-align: center;
+}
+button {
+  margin: 10px;
+  padding: 5px;
+  font-size: 16px;
+}

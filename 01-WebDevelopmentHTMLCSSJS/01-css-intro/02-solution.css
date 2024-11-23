@@ -1,0 +1,12 @@
+.space-info {
+  background-color: black;
+}
+
+h1 {
+  color: orange;
+}
+
+p {
+  font-color: green;
+  /* color: green; */
+}

@@ -1,0 +1,11 @@
+.board-game {
+  display: grid; /* Apply grid layout */
+  grid-template-columns: auto auto; /* Two columns */
+  gap: 10px; /* Space between squares using gap as mentioned in the lesson */
+}
+
+.board-square {
+  padding: 25px; /* Control size indirectly using padding */
+  background-color: lightcoral;
+  border: 1px solid black; /* Define the border of squares */
+}

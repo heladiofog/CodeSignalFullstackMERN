@@ -1,0 +1,23 @@
+@media screen and (min-width: 400px) {
+  .workspace {
+    width: 50%;
+    float: left;
+  }
+  .plant {
+    width: 50%;
+    float: right;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .workspace {
+    background-color: lightcoral; /*solution*/
+    width: 100%;
+    float: none;
+  }
+  .plant {
+    background-color: yellow; /*solution*/
+    width: 100%;
+    float: none;
+  }
+}

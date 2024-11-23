@@ -1,0 +1,15 @@
+/* TODO: Add style for your stars div, setting background color black and text color white. */
+.stars {
+  background-color: black;
+  color: white;
+}
+/* TODO: Color the h1 element orange. */
+h1 {
+  color: orange;
+}
+
+/* TODO: Color one of the paragraphs yellow and make it italic. */
+#specific-star {
+  color: yellow;
+  font-style: italic;
+}
