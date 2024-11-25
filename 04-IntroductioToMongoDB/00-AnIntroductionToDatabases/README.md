@@ -16,5 +16,7 @@ One of the popular systems for managing databases is MongoDB. Picture MongoDB as
 
 By the end of this lesson, you will grasp the basics of databases and understand why we choose MongoDB as our superhero librarian. Prepare for some practice exercises at the end to solidify your understanding. Let's commence our journey to explore the cosmos of MongoDB!
 
+
+
 ```
 ```
