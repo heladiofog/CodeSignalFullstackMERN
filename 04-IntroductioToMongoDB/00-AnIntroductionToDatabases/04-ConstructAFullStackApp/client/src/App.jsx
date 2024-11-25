@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const App = () => {
-  const [greeting, setGreeting] = useState('');
+function App() {
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
-    axios.get('/api/space').then((response) => {
-      setGreeting(response.data);
+    axios.get('/api/some-endpoint').then((response) => {
+      setMessage(response.data.message);
     });
   }, []);
 
   return (
-    <div className="App">
-      <h1>{greeting || 'Connecting to Space...'}</h1>
+    <div>
+      <header>
+        <h1>Welcome to CodeSignal!</h1>
+        <p>API message: {message}</p>
+      </header>
     </div>
   );
-};
+}
 
 export default App;
