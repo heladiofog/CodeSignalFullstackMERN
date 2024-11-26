@@ -46,7 +46,7 @@ app.get('/api/some-endpoint', async (req, res) => {
       .then((book) => res.json({ message: JSON.stringify(book) }))
       .catch((err) => console.error(err));
     // Solution: call to findBooksByAuthor method:
-    // findBookByAuthor('Marijn Haverbeke')
+    // findBooksByAuthor('Marijn Haverbeke')
     //   .then((book) => res.json({ message: JSON.stringify(book) }))
     //   .catch((err) => console.error(err));
   } catch (err) {
