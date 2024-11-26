@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
 const initialDBSetup = require('./initialDBSetup');
-const Book = require('./bookModel');
 
 const app = express();
 
@@ -20,35 +19,21 @@ mongoose
     await initialDBSetup();
   });
 
-// TODO: Update this function based on the instructions provided in the task description
-async function findBookByTitle(title) {
-  try {
-    return await Book.findOne({ title: title });
-  } catch (err) {
-    console.error('Error finding book by title:', err);
-  }
-}
-
-// Solution: findBookByAuthor function
-// TODO: Update this function based on the instructions provided in the task description
-async function findBookByAuthor(name) {
-  try {
-    return await Book.find({ author: name }); // Returns an array!!
-  } catch (err) {
-    console.error('Error finding book by author:', err);
-  }
-}
+const bookSchema = new mongoose.Schema({
+  title: String,
+  author: Number,
+  // Solution:
+  // author: String,  // data type was wrong
+  isbn: Number,
+});
+const Book = mongoose.model('Book', bookSchema);
 
 app.get('/api/some-endpoint', async (req, res) => {
   try {
-    // TODO: Don't forget to update the DB call too to take the author name 'Marijn Haverbeke'.
-    findBookByTitle('Eloquent JavaScript')
-      .then((book) => res.json({ message: JSON.stringify(book) }))
-      .catch((err) => console.error(err));
-    // Solution: call to findBookByAuthhor method:
-    // findBookByAuthor('Marijn Haverbeke')
-    //   .then((book) => res.json({ message: JSON.stringify(book) }))
-    //   .catch((err) => console.error(err));
+    Book.find({ author: 'Marijn Haverbeke' })
+      .exec()
+      .then((books) => res.json({ message: JSON.stringify(books) }))
+      .catch((err) => console.error('Error finding books:', err));
   } catch (err) {
     res.status(500).send(err.message);
   }
