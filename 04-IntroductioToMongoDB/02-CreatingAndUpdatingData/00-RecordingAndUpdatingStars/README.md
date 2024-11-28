@@ -1,0 +1,2 @@
+# Problem
+Stellar Navigator, our mission today involves both observing new celestial phenomena and refining our cosmic ledger. The starter code simulates a scenario where new stars, "Orionis" and "Polaris", are documented, and an existing record of "Polaris" is updated in our MongoDB using Mongoose. By running the React frontend app, we'll trigger these operations through API calls. Observe the frontend interacting with our server as we catalog the stars!
