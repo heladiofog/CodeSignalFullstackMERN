@@ -31,10 +31,10 @@ app.post('/api/planets', async (req, res) => {
     await newPlanet.save();
     res.status(200).json(newPlanet);
   } catch (error) {
+    // Return 500 status code with relevant error message in case of failure
     console.log(`Error saving a new pplanet: ${error.message}`);
     res.status(500).json({ message: 'Error saving a new planet.' });
   }
-  // Return 500 status code with relevant error message in case of failure
 });
 
 app.listen(port, () => {
