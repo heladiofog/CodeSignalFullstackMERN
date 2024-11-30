@@ -25,6 +25,11 @@ app.post('/api/planets', async (req, res) => {
     return res.status(400).send('Name is required');
   }
   // TODO: Create a new planet with the given name req.body.name using Mongoose Model
+  // Save the new planet and return 200 status code with the newly created object
+  // Return 500 status code with relevant error message in case of failure
+  
+  // Solution
+  /*
   try {
     // Save the new planet and return 200 status code with the newly created object
     const newPlanet = new Planet({ name: req.body.name});
@@ -35,6 +40,7 @@ app.post('/api/planets', async (req, res) => {
     console.log(`Error saving a new pplanet: ${error.message}`);
     res.status(500).json({ message: 'Error saving a new planet.' });
   }
+    */
 });
 
 app.listen(port, () => {

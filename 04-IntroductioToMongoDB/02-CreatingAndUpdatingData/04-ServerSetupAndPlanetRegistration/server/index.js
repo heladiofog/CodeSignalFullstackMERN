@@ -33,6 +33,7 @@ mongoose
 // TODO: Define the server port (use environment variable with default), and have the app listen on that port
 
 // Solution:
+/*
 // Define the schema for planets
 // TODO: Define a mongoose schema for planets with properties: name(string), size(string), mass(number), distanceFromSun(string)
 const planetSchema = new mongoose.Schema(
@@ -74,3 +75,4 @@ const port = 5000;
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
+*/
