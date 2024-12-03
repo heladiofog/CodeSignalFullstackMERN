@@ -45,7 +45,7 @@ const Planet = mongoose.model('planets', planetSchema);
 // It should fetch and respond with all large planets sorted by distance from the Sun
 app.get('/api/planets', async (req, res) => {
   try {
-    const planets = await Planet.find()
+    const planets = await Planet.find({size: 'Large'})
       .sort({ distanceFromSun: 1 })
       .select('name size mass -_id');
     res.json(planets);
