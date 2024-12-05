@@ -1,0 +1,2 @@
+# Problem
+In the code provided, we simulate the decommissioning of giant planets from our `planets` collection. The backend server is set up to handle a `DELETE` request, which, when invoked, removes any planet that is not active. Click Run to execute the code and observe how giant planets are cleared from our galactic database!
