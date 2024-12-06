@@ -1,0 +1,2 @@
+# Problem
+Brace yourself for a mission in the Banking System galaxy! This code demonstrates how a user is authenticated in a simple banking system. It utilizes JavaScript's `.find()` method to locate user credentials on the server and the `fetch` API for communication between the front end and the back end. Click Run to see how the seamless login process unfolds! Try the following user credentials: `username=user1` and `password=pass1`.
