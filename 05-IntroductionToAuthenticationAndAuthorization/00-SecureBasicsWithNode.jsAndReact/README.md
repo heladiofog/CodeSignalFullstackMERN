@@ -1,4 +1,4 @@
-# Lesson 6: Introduction to Authentication and Authorization
+# Course 6 - Lesson 1: Introduction to Authentication and Authorization
 Dive into the world of Authentication and Authorization with this introductory course on web security. Understand and practice how to secure your applications and protect against common security threats.
 
 Fantastic! Today, we're diving deep into the galaxy of authentication and authorization. This is going to be an exciting journey. I'll be right here if you need any help! 🚀
