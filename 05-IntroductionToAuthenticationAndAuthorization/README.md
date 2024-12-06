@@ -1,0 +1,2 @@
+# Introduction to Authentication and Authorization
+Dive into the world of Authentication and Authorization with this introductory course on web security. Understand and practice how to secure your applications and protect against common security threats.
