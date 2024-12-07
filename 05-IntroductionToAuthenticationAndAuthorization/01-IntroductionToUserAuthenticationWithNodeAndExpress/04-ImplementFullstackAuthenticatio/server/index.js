@@ -5,7 +5,7 @@ const app = express();
 // Solution:
 const hardcodedAuth = (req, res, next) => {
   const hardCodedUser = { username: 'admin', password: 'admin' };
-  const isAuthenticated = (hardCodedUser.username === req.body.username && hardCodedUser.password === req.body.password);
+  const isAuthenticated = (hardCodedUser.username === req.query.username && hardCodedUser.password === req.query.password);
 
   // Call next() if authenticated, else respond with status 401 and 'Invalid credentials'
   if (isAuthenticated) {
@@ -14,6 +14,7 @@ const hardcodedAuth = (req, res, next) => {
     res.status(401).send("Invalid credentials");
   }
 };
+
 app.use('/api/login', hardcodedAuth, (req, res) => {
   // TODO: Update to include your middleware and send a response on successful authentication
   // Solution:
