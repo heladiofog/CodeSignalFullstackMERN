@@ -1,0 +1,2 @@
+# Problem
+Alright, Space Voyager, it's time to cement your grasp of user authentication in our Online Bookstore universe. Can you set up the backend and frontend to manage user logins? Use your knowledge of backend authentication and frontend state handling to authenticate our admin user. Then, display a welcome message if their login is successful. Are you ready to embark on your final mission for this lesson?
