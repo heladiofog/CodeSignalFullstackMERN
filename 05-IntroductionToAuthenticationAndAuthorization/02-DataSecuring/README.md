@@ -14,14 +14,13 @@ Passwords are central to securing user accounts. Weak passwords like '12345' or 
 To store passwords securely, we employ hashing and encryption rather than plain texts. Encryption changes plain text into cipher text using an encryption key, which can be decrypted using a decryption key. In contrast, hashing is irreversible. It processes input into a fixed byte size, like blending fruits for a smoothie where retrieving the original pieces is impossible. Hashing obeys the same rule.
 
 ## Introduction to bcrypt
-Bcrypt, a password-hashing function created by Niels Provos and David Mazières, adds an extra layer of security to our data. Bcrypt applies both salt and hash techniques on passwords, enhancing their security.
+`Bcrypt`, a password-hashing function created by Niels Provos and David Mazières, adds an extra layer of security to our data. Bcrypt applies both **salt** and **hash** techniques on passwords, enhancing their security.
 
-In JavaScript, bcrypt uses an asynchronous API with native promises to hash passwords. We hash a password using the bcrypt.hash() function and check a password against a hash using the bcrypt.compare() function.
+In JavaScript, `bcrypt` uses an asynchronous API with native promises to hash passwords. We hash a password using the `bcrypt.hash()` function and check a password against a hash using the `bcrypt.compare()` function.
 
 Here's a direct example of using the bcrypt.hash() function:
 
-JavaScript
-Copy to clipboard
+```JavaScript
 const password = 'My$3cur3Pa$$w0rd!';
 const saltRounds = 10;
 
@@ -35,22 +34,22 @@ try {
 } catch (err) {
   console.error(err.message);
 }
-Let's dwell a little deeper into the bcrypt.hash() function. It accepts three parameters:
+```
+Let's dwell a little deeper into the `bcrypt.hash()` function. It accepts three parameters:
 
-password: This is the plain-text password that you want to hash.
+1. `password`: This is the plain-text password that you want to hash.
 
-saltRounds: This is the number of rounds you want to process the data for. More rounds lead to more secured hashed data but require more processing time. A balance between security and performance is usually maintained at around ten rounds.
+2. `saltRounds`: This is the number of rounds you want to process the data for. More rounds lead to more secured hashed data but require more processing time. A **balance between security and performance is usually maintained at around ten rounds**.
 
-callback: This function gets executed once bcrypt has hashed the password. It should accept two arguments:
+3. `callback`: This function gets executed once bcrypt has hashed the password. It should accept two arguments:
 
-error: An error object if an error occurred, null otherwise.
-hash: If no error occurred, this is the hashed password.
+  - `error`: An error object if an error occurred, `null` otherwise.
+  - `hash`: If no error occurred, this is the hashed password.
 
 ## Implementing bcrypt for Password Security
-We move now to the verification part with bcrypt.compare(). Here, errors can be handled by examining the err parameter in the callback function. If err is not null, an error has occurred during the hash comparison.
+We move now to the verification part with `bcrypt.compare()`. Here, errors can be handled by examining the `err` parameter in the callback function. If `err` is not `null`, an error has occurred during the hash comparison.
 
-JavaScript
-Copy to clipboard
+```JavaScript
 const passwordAttempt = 'TryingToGuessPassword';
 
 bcrypt.compare(passwordAttempt, hash, function(err, isMatch) {
@@ -62,17 +61,17 @@ bcrypt.compare(passwordAttempt, hash, function(err, isMatch) {
       console.log("Password matches!");
     }
 });
-In this script, passwordAttempt refers to the password we want to check, and hash is the user's hashed password from the database. isMatch will be either true or false, indicating whether the password and hash match.
+```
+In this script, `passwordAttempt` refers to the password we want to check, and `hash` is the user's hashed password from the database. `isMatch` will be either `true` or `false`, indicating whether the password and hash match.
 
 ## Beefing Up Security with Middleware: Hashing Passwords in Signup and Login Routes
-Middlewares refer to functions that have access to the request object, the response object, and the next middleware function in the application's request-response cycle. They can execute any code, make changes to the request-response objects, end the request-response cycle, and call the next middleware function in the stack.
+Middlewares refer to functions that have access to the request object, the response object, and the `next` middleware function in the application's request-response cycle. They can execute any code, make changes to the request-response objects, end the request-response cycle, and call the next middleware function in the stack.
 
 With the help of middlewares, we can add an extra layer of security to our application by hashing the passwords when users sign up or log in. Let's explore how!
 
 First, we'll define a middleware function for password hashing:
 
-JavaScript
-Copy to clipboard
+```JavaScript
 function hashPassword(req, res, next){
   const saltRounds = 10;
 
@@ -89,12 +88,12 @@ function hashPassword(req, res, next){
     }
   });
 }
-This hashPassword middleware hashes the password from the request body and replaces the original password in the request body with the hashed password. If an error occurs during hashing, it will send a 500 status code.
+```
+This `hashPassword` middleware hashes the password from the request body and replaces the original password in the request body with the hashed password. If an error occurs during hashing, it will send a 500 status code.
 
 Now, we will create the signup and login routes. We'll be storing the user data in a hardcoded object for simplicity. In your actual applications, this data will be stored in a database instead.
 
-JavaScript
-Copy to clipboard
+```JavaScript
 // Hardcoded user data
 let users = {};
 
@@ -134,9 +133,10 @@ app.post('/login', function(req, res) {
     res.status(404).send('User not found!');
   }
 });
-The signup route uses the hashPassword middleware to hash the password before saving the user data. The login route checks the username and password, compares the hashed password with the entered password, and sends the appropriate response.
+```
+The **signup route** uses the `hashPassword` middleware to hash the password before saving the user data. The **login route** checks the username and password, compares the hashed password with the entered password, and sends the appropriate response.
 
-And voila! You now know how to use middlewares in Express.js to provide an extra layer of security by hashing passwords! Remember, bcrypt comes pre-installed in most CodeSignal environments. However, learning to do it is crucial for working on your own projects or other environments.
+And voila! You now know how to use middlewares in Express.js to provide an extra layer of security by hashing passwords! Remember, `bcrypt` comes pre-installed in most CodeSignal environments. However, learning to do it is crucial for working on your own projects or other environments.
 
 ## Lesson Summary and Practice Announcement
 Bravo! You've navigated the sea of user data, grasped the importance of password security, unearthed the secrets of hashing and encryption, and wielded `bcrypt` for password security.
