@@ -22,7 +22,7 @@ app.post('/api/signup', async (req, res) => {
     // Update userDB to set a new username (generate it randomly or just hardcode for simplicity) and password.
     userDB.set('user1', hashedPassword);
     // Make sure that you handle any potential errors as well
-    res.status(200).send({ message: 'User successfullt signed up.'});
+    res.status(200).send({ message: 'User successfully signed up.'});
   } catch (error) {
     return res.status(500).json({ message: 'Error hashing the password' });
   }
