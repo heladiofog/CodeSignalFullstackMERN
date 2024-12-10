@@ -1,4 +1,4 @@
-# Securing the Universe of User Data: Unveiling Password Security, Hashing, Encryption, and bcrypt Implementation
+# Course 6 - Lesson 3 - Securing the Universe of User Data: Unveiling Password Security, Hashing, Encryption, and bcrypt Implementation
 We're getting into the heart of authentication now! 👨‍🚀 Buckle up and let me know if there's anything you need help with.
 
 ## Introduction to Securing User Data
