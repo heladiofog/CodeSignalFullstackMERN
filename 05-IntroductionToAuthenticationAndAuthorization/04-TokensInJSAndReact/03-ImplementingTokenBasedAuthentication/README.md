@@ -1,0 +1,2 @@
+# Problem
+Galactic Pioneer, your space exploration mission control center requires a secure communication channel! It is time to create a login system and establish a method for securely fetching secret data using tokens. Follow the steps outlined in the comments to write the Node.js server from scratch. Remember, when space travelers log in, they must receive a token to access privileged information.
